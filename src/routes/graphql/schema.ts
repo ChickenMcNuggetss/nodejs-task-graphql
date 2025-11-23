@@ -5,9 +5,7 @@ import {
   GraphQLList,
   GraphQLString,
   GraphQLInt,
-  GraphQLID,
   GraphQLEnumType,
-  GraphQLScalarType,
   GraphQLBoolean,
   GraphQLFloat,
 } from 'graphql';
@@ -111,7 +109,6 @@ const Query = new GraphQLObjectType({
   name: 'Query',
   fields: () => ({
     user: {
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
       type: User,
       args: { id: { type: new GraphQLNonNull(UUIDType) } },
       resolve: async (_, { id }: { id: string }, context) => {

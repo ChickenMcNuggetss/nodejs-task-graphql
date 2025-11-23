@@ -7,6 +7,6 @@ export interface UserI {
   balance: number;
   profile?: ProfileI;
   posts: PostI[];
-  userSubscribedTo: () => UserI[];
-  subscribedToUser: () => UserI[];
+  userSubscribedTo: UserI[];
+  subscribedToUser: UserI[];
 }
