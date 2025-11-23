@@ -124,7 +124,6 @@ const Query = new GraphQLObjectType({
       args: { id: { type: new GraphQLNonNull(memberTypeIdEnumType) } },
       resolve: async (_, { id }: { id: 'BUSINESS' | 'BASIC' }, context) => {
         const res = await context.prisma.memberType.findUnique({ where: { id } });
-        console.log(res, 'rofile parent');
         return res;
       },
     },
